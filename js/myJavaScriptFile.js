@@ -11,29 +11,56 @@ function getComputerChoice(){
     }
 }
 
+function setScore(player){
+    let score = player.textContent;
+    player.textContent = ++score;
+}
+
+function setHandResult(handResult, str){
+
+    handResult.textContent = str;
+}
+
 function playRound(playerSelection, computerSelection){
     let playerSelectionUpperCase = playerSelection.toUpperCase();
     let computerSelectionUpperCase = computerSelection.toUpperCase();
 
+    changeHandSelectionIcon(playerSelectionUpperCase, document.querySelector(".playerSelection"));
+    changeHandSelectionIcon(computerSelectionUpperCase, document.querySelector(".computerSelection"));
+
     if(playerSelectionUpperCase == computerSelectionUpperCase){
-        return 'Tie!'
+        setHandResult(document.querySelector(".showHandResult"),`Tie!`);
     }else if((playerSelectionUpperCase == 'ROCK' && computerSelectionUpperCase == 'SCISSORS') ||
             (playerSelectionUpperCase == 'PAPER' && computerSelectionUpperCase == 'ROCK') ||
             (playerSelectionUpperCase == 'SCISSORS' && computerSelectionUpperCase == 'PAPER')){
-        return `You win! ${playerSelectionUpperCase} beats ${computerSelectionUpperCase}`;
+        setScore(document.querySelector(".playerScore"));
+        setHandResult(document.querySelector(".showHandResult"),`You win! ${playerSelectionUpperCase} beats ${computerSelectionUpperCase}`);
     }else{
-        return `You lose! ${computerSelectionUpperCase} beats ${playerSelectionUpperCase}`;
+        setScore(document.querySelector(".computerScore"));
+        setHandResult(document.querySelector(".showHandResult"),`You lose! ${computerSelectionUpperCase} beats ${playerSelectionUpperCase}`);
     }
 }
 
-function game(){
-    const playerSelection = window.prompt('Player choice:');
+function changeHandSelectionIcon(playerChoice, element){
+    if(playerChoice === "ROCK"){
+        element.textContent = "🤜";
+    }else if(playerChoice === "PAPER"){
+        element.textContent = "🖐";
+    }else if(playerChoice === "SCISSOR"){
+        element.textContent = "✌️";
+    }
+}
+function game(buttonValue){
+    const playerSelection = buttonValue;
     const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    playRound(playerSelection, computerSelection);
 }
 
-game();
-game();
-game();
-game();
-game();
+
+const divsPlayerChoice = document.querySelectorAll(".playerChoices > div");
+
+divsPlayerChoice.forEach((div) => {
+    div.addEventListener('click', (e) =>{
+        game(div.dataset.value);
+    });
+});

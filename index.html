@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="java" href="">
+    <link rel="stylesheet" href="./css/myStyles.css">
     <title>Document</title>
+    <script src="./js/myJavaScriptFile.js" defer></script>
 </head>
-<body>
-    
-    <script src="./js/myJavaScriptFile.js"></script>
+<body> 
+    <header>
+        <div class="header">
+            Rock Paper Scissors
+        </div>
+    </header>
+    <main>
+        <div class="showHandResult">First to score 5 points wins the game</div>
+
+        <div class="handSelection">
+            <div class="playerSelectionContainer">
+                <div class="playerSelection">✖️</div>
+                <p>Player: <span class="playerScore">0</span></p>
+            </div>
+            <div class="computerSelectionContainer">
+                <div class="computerSelection">✖️</div>
+                <p>Computer: <span class="computerScore">0</span></p>
+            </div>
+        </div>
+
+        <div class="showWinner">Choose your hand:</div>
+
+        <div class="playerChoices">
+            <div data-value="rock">🤜</div>
+            <div data-value="paper">🖐</div>
+            <div data-value="scissor">✌️</div>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>

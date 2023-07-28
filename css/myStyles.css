@@ -1,0 +1,59 @@
+*,::before,::after{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header{
+    border: 1px solid red;
+    padding: 16px;
+}
+div.header{
+    text-align: center;
+}
+
+main{
+    padding: 16px;
+    border: 1px solid blue;
+}
+div.showWinner,
+div.showHandResult{
+    text-align: center;
+    
+}
+
+div.handSelection{
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+div.handSelection > div{
+    border: 1px solid pink;
+}
+
+div.playerSelectionContainer,
+div.computerSelectionContainer{
+    text-align: center;
+}
+
+div.playerSelection,
+div.computerSelection{
+    font-size: 100px;
+}
+
+div.playerChoices{
+    border: 1px solid violet;
+    display:flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+div.playerChoices > div{
+    border: 1px solid magenta;
+    font-size: 100px;
+    cursor: pointer;
+}
