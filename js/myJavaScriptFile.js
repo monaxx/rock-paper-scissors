@@ -75,10 +75,29 @@ function declareWinner(playerScore, computerScore){
     divsPlayerChoice.forEach((div) => {
         div.removeEventListener('click', startGame);
     });
+    appendRestartGameButton();
 }
 
-function restartGame(){
+function appendRestartGameButton(){
+   
+    let divRestartButton = document.createElement("div");
+    divRestartButton.classList.toggle("restartButton");
 
+    document.querySelector(".restartButtonContainer").appendChild(divRestartButton);
+    
+    divRestartButton.textContent = "Restart";
+    divRestartButton.addEventListener("click", () => {
+        document.querySelector(".showHandResult").textContent = "First to score 5 points wins the game!";
+        document.querySelector(".playerScore").textContent = 0;
+        document.querySelector(".computerScore").textContent = 0;
+        document.querySelector(".showWinner").textContent = "Choose your hand:";
+        document.querySelector(".playerSelection").textContent = "✖️";
+        document.querySelector(".computerSelection").textContent = "✖️";
+        document.querySelector(".restartButtonContainer").textContent = "";
+        runGame();
+    });
+
+    document.querySelector(".restartButtonContainer").appendChild(divRestartButton);
 }
 
 let startGame = game;
@@ -90,6 +109,10 @@ const divsPlayerChoice = document.querySelectorAll(".playerChoices > div");
 //     });
 // });
 
-divsPlayerChoice.forEach((div) => {
-    div.addEventListener('click', startGame);
-});
+function runGame(){
+    divsPlayerChoice.forEach((div) => {
+        div.addEventListener('click', startGame);
+    });
+}
+
+runGame();

@@ -57,3 +57,14 @@ div.playerChoices > div{
     font-size: 100px;
     cursor: pointer;
 }
+
+div.restartButtonContainer{
+    display: flex;
+    justify-content: center;
+}
+
+div.restartButton{
+    border: 1px solid seagreen;
+    padding: 10px;
+    cursor: pointer;
+}
