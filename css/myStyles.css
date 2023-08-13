@@ -8,7 +8,6 @@ html{
 }
 
 header{
-    border: 1px solid red;
     padding: 16px;
 }
 div.header{
@@ -17,7 +16,6 @@ div.header{
 
 main{
     padding: 16px;
-    border: 1px solid blue;
 }
 div.showWinner,
 div.showHandResult{
@@ -26,13 +24,11 @@ div.showHandResult{
 }
 
 div.handSelection{
-    border: 1px solid green;
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 div.handSelection > div{
-    border: 1px solid pink;
 }
 
 div.playerSelectionContainer,
@@ -46,14 +42,12 @@ div.computerSelection{
 }
 
 div.playerChoices{
-    border: 1px solid violet;
     display:flex;
     justify-content: center;
     gap: 10px;
 }
 
 div.playerChoices > div{
-    border: 1px solid magenta;
     font-size: 100px;
     cursor: pointer;
 }
@@ -64,7 +58,6 @@ div.restartButtonContainer{
 }
 
 div.restartButton{
-    border: 1px solid seagreen;
     padding: 10px;
     cursor: pointer;
 }
